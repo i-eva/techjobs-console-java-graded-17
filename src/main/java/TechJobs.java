@@ -121,7 +121,7 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        // Nested loop: outside array and list inside: hash map
+        // Nested loop: outside ArrayList inside hash map
         for (HashMap<String, String> map : someJobs) {
             System.out.println("*****");
             for (Map.Entry<String, String> entry : map.entrySet()) {
