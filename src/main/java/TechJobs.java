@@ -123,13 +123,13 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         // Nested loop: outside ArrayList inside hash map
         for (HashMap<String, String> map : someJobs) {
-            System.out.println("*****");
+            System.out.println("\n*****");
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
                 System.out.println(key + ": " + value);
             }
-            System.out.println("*****\n");
+            System.out.println("*****");
         }
     }
 }
