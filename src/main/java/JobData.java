@@ -65,6 +65,8 @@ public class JobData {
      * @return List of all jobs matching the criteria
      */
     public static ArrayList<HashMap<String, String>> findByColumnAndValue(String column, String value) {
+        // ignore case
+        String lowerCaseValue = value.toLowerCase();
 
         // load data, if not already loaded
         loadData();
@@ -74,8 +76,10 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
+            // ignore case
+            String lowerCaseAValue = aValue.toLowerCase();
 
-            if (aValue.contains(value)) {
+            if (lowerCaseAValue.contains(lowerCaseValue)) {
                 jobs.add(row);
             }
         }
@@ -90,7 +94,8 @@ public class JobData {
      * @return      List of all jobs with at least one field containing the value
      */
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
-
+        // ignore case
+        String lowerCaseValue = value.toLowerCase();
         // load data, if not already loaded
         loadData();
 
@@ -99,8 +104,9 @@ public class JobData {
         for (HashMap<String, String> jobsHashmap : allJobs) {
 
             for (String jobValue : jobsHashmap.values()) {
-
-                if (jobValue.contains(value)) {
+                // ignore case
+                String lowerCaseJobValue = jobValue.toLowerCase();
+                if (lowerCaseJobValue .contains(lowerCaseValue)) {
                     jobsByValue.add(jobsHashmap);
                     break; //to keep a keyword like "Stack" from bringing up the same job listing twice
                 }
