@@ -96,10 +96,14 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobsByValue = new ArrayList<>();
 
-        for (HashMap<String, String> row : allJobs) {
+        for (HashMap<String, String> jobsHashmap : allJobs) {
 
-            if (row.containsValue(value)) {
-                jobsByValue.add(row);
+            for (String jobValue : jobsHashmap.values()) {
+
+                if (jobValue.contains(value)) {
+                    jobsByValue.add(jobsHashmap);
+                    break; //to keep a keyword like "Stack" from bringing up the same job listing twice
+                }
             }
         }
 
