@@ -49,8 +49,8 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
-        return allJobs;
+        // attempt at making a copy for bonus mission
+        return new ArrayList<HashMap<String, String>>(allJobs);
     }
 
     /**
